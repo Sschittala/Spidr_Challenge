@@ -16,9 +16,25 @@ function App() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handlePhoneChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ''); 
+    if (value.length > 10) value = value.slice(0, 10); 
+    
+    // Format with dashes: XXX-XXX-XXXX
+    let formatted = '';
+    for (let i = 0; i < value.length; i++) {
+      if (i === 3 || i === 6) {
+        formatted += '-';
+      }
+      formatted += value[i];
+    }
+    
+    setFormData(prev => ({ ...prev, phone: formatted }));
+  };
+
   const handlePinChange = (e) => {
-    let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-    if (value.length > 16) value = value.slice(0, 16); // Limit to 16 digits
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 16) value = value.slice(0, 16); 
     
     // Format with dashes
     let formatted = '';
@@ -39,6 +55,11 @@ function App() {
       return;
     }
     
+    if (formData.phone.replace(/-/g, '').length !== 10) {
+      alert('Phone number must be exactly 10 digits');
+      return;
+    }
+    
     if (formData.pin.replace(/-/g, '').length !== 16) {
       alert('PIN must be exactly 16 digits');
       return;
@@ -51,7 +72,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="form-container">
-        <h2>Join the Air Fryer Revolution</h2>
+        <h2>Become an Air Fryer insider</h2>
         
         <div className="form">
           <div className="form-group">
@@ -82,7 +103,9 @@ function App() {
               name="phone"
               type="tel"
               value={formData.phone}
-              onChange={handleChange}
+              onChange={handlePhoneChange}
+              placeholder="123-456-7890"
+              maxLength="12"
               required
             />
           </div>

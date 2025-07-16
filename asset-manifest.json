@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Spidr_Challenge/static/css/main.59e70246.css",
+    "main.js": "/Spidr_Challenge/static/js/main.8a6ae094.js",
+    "static/js/453.b21a91d2.chunk.js": "/Spidr_Challenge/static/js/453.b21a91d2.chunk.js",
+    "index.html": "/Spidr_Challenge/index.html",
+    "main.59e70246.css.map": "/Spidr_Challenge/static/css/main.59e70246.css.map",
+    "main.8a6ae094.js.map": "/Spidr_Challenge/static/js/main.8a6ae094.js.map",
+    "453.b21a91d2.chunk.js.map": "/Spidr_Challenge/static/js/453.b21a91d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59e70246.css",
+    "static/js/main.8a6ae094.js"
+  ]
+}
